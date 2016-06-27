@@ -34,7 +34,7 @@
                 <div class="top-search-content">
                   <div class="container-1">
                     <span class="icon"><i class="fa fa-search"></i></span>
-                    <input type="search" id="search" placeholder="検索する..." />
+                    <?php echo $this->Form->text('keyword', array('type' => 'search', 'id' => 'search', 'class' => 'span12', 'placeholder' => '書籍を検索')); ?>
                   </div>
                 </div>
               </div>
