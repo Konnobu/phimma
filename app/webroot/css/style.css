@@ -30,7 +30,6 @@ body {
 /* ヘッダー */
 .header {
   height: 80px
-
 }
 
 .navbar-default {
@@ -175,7 +174,7 @@ body {
 .intro .container {
   position: absolute;
   left: 50%;
-  top: 48%;
+  top: 365px;
   -webkit-transform: translate(-50%, -50%);
   -moz-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
@@ -188,7 +187,7 @@ body {
 
 /* What is */
 .what-is {
-  padding: 100px 0 100px 0;
+  padding: 130px 0 100px 0;
   background-color: #FFFFFF;
 }
 

@@ -129,7 +129,8 @@ insert into exhibit_categories (category_name) values
 ('その他');
 
 
-INSERT INTO `phimma`.`users` (`id`, `name`, `email`, `password_hash`, `student_number`, `faculty_id`, `department_id`, `admission_year`) VALUES (NULL, '今野遼太', '', 'password', '0312014068', '1', '1', '2014');
+INSERT INTO `phimma`.`users` (`id`, `name`, `email`, `password_hash`, `student_number`, `faculty_id`, `department_id`, `admission_year`) VALUES (NULL, '今野遼太', 'g031m068@s.iwate-pu.ac.jp', 'password', '0312014068', '1', '1', '2014');
 
 
-
+ALTER TABLE `users` ADD `self_introduction` TEXT NULL DEFAULT NULL AFTER `self_introduction`;
+ALTER TABLE `exhibits` ADD `exhibit_description` TEXT NULL DEFAULT NULL AFTER `price`;
