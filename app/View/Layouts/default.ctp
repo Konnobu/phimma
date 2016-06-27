@@ -1,63 +1,80 @@
-<?php
-/**
- * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
- * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
- *
- * Licensed under The MIT License
- * For full copyright and license information, please see the LICENSE.txt
- * Redistributions of files must retain the above copyright notice.
- *
- * @copyright     Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
- * @link          http://cakephp.org CakePHP(tm) Project
- * @package       app.View.Layouts
- * @since         CakePHP(tm) v 0.10.0.1076
- * @license       http://www.opensource.org/licenses/mit-license.php MIT License
- */
-
-$cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework');
-$cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
-?>
 <!DOCTYPE html>
 <html>
 <head>
 	<?php echo $this->Html->charset(); ?>
 	<title>
-		<?php echo $cakeDescription ?>:
 		<?php echo $this->fetch('title'); ?>
 	</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
 	<?php
 		echo $this->Html->meta('icon');
 
-		echo $this->Html->css('cake.generic');
-
 		echo $this->fetch('meta');
-		echo $this->fetch('css');
-		echo $this->fetch('script');
+		echo $this->Html->css('bootstrap.min.css');
+		echo $this->Html->css('skippr.css');
+		echo $this->Html->css('style.css');
+		echo $this->Html->script('jquery-2.2.4.min.js');
+		echo $this->Html->script('bootstrap.min.js');
+		echo $this->Html->script('skippr.min.js');
+		echo $this->Html->script('wow.min.js');
+		echo $this->Html->script('main.js');
 	?>
 </head>
 <body>
-	<div id="container">
-		<div id="header">
-			<h1><?php echo $this->Html->link($cakeDescription, 'http://cakephp.org'); ?></h1>
-		</div>
-		<div id="content">
+    <nav class="header navbar navbar-default navbar-fixed-top">
+        <div class="container">
+          <div class="row">
+            <div class="header-left col-md-6">
+              <a class="navbar-brand" href="index.php">
+              	<?php echo $this->Html->image('/img/logo_img/phimma-logo.png', array('width'=>'200','height'=>'37')); ?>
+              </a>
+            </div>
+            <div class="header-right col-md-6">
+              <div class="top-header-search header-right-box">
+                <div class="top-search-content">
+                  <div class="container-1">
+                    <span class="icon"><i class="fa fa-search"></i></span>
+                    <input type="search" id="search" placeholder="検索する..." />
+                  </div>
+                </div>
+              </div>
+              <div class="header-right-login header-right-box">
+                <button class="btn btn-default login-btn primary-pink" type="submit">ログイン</button>
+              </div>
+              <div class="header-right-signup header-right-box">
+                <button class="btn btn-default signup-btn sub-blue" type="submit">新規会員登録</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav><!-- Header -->
 
 			<?php echo $this->Flash->render(); ?>
 
 			<?php echo $this->fetch('content'); ?>
+
 		</div>
-		<div id="footer">
-			<?php echo $this->Html->link(
-					$this->Html->image('cake.power.gif', array('alt' => $cakeDescription, 'border' => '0')),
-					'http://www.cakephp.org/',
-					array('target' => '_blank', 'escape' => false, 'id' => 'cake-powered')
-				);
-			?>
-			<p>
-				<?php echo $cakeVersion; ?>
-			</p>
-		</div>
-	</div>
-	<?php echo $this->element('sql_dump'); ?>
+    <footer>
+      <div class="row">
+        <div class="container">
+          <div class="footer-nav">
+            <nav class="">
+              <a href="#">よくある質問</a>
+              <a href="#">使い方</a>
+              <a href="#">プライバシー</a>
+              <a href="#">ご利用規約</a>
+              <a href="#">運営会社</a>
+              <a href="#">運営へのお問合せ</a>
+            </nav>
+            <div>
+              <?php echo $this->Html->image('/img/logo_img/phimma-logo.png', array('width'=>'200','height'=>'37', 'class'=>'footer-logo')); ?>
+
+              <p class="footer-copywrite">© 2016 PHIMMA!</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
 </body>
 </html>
