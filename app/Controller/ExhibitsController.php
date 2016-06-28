@@ -29,23 +29,27 @@ class ExhibitsController extends AppController {
   }
 
   public function index() {
+    // 出品物全てを取得
     $this->set('exhibits', $this->Exhibit->find('all'));
+    // 出品数を取得
     $this->set('exhibits_count', $this->Exhibit->find('count'));
   }
 
   public function show($id) {
+    // $id 番の出品物を取得
     $exhibit = $this->Exhibit->findById($id);
     $this->set('exhibit', $exhibit);
 
-    $exhibit_status_enum = array(
+
+    $book_status_enum = array(
       0 => '新品未開封',
       1 => '美品',
       2 => '使用感あり',
       3 => 'キズ汚れあり'
       );
 
-    $exhibit_status = $exhibit_status_enum[$exhibit['Exhibit']['exhibit_status']];
-    $this->set('exhibit_status', $exhibit_status);
+    $book_status = $exhibit_status_enum[$exhibit['Exhibit']['book_status']];
+    $this->set('book_status', $book_status);
     // $user = $this->User->findById($exhibit->user_id);
     // $this->set('user', $user);
   }

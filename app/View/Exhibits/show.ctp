@@ -39,7 +39,7 @@
                 </tr>
                 <tr>
                   <td>商品状態：</td>
-                  <td><?php echo h($exhibit_status) ?></td>
+                  <td><?php echo h($book_status) ?></td>
                 </tr>
                 <tr>
                   <td>カテゴリ：</td>
